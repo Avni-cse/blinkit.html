@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blinkit - Login</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f7f8fa;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    background: white;
+    width: 370px;
+    padding: 35px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 5px 25px #00000012;
+}
+
+.logo {
+    display: inline-block;
+    padding: 8px 20px;
+    margin-bottom: 25px;
+    background: #0c831f;
+    color: #f8cb46;
+    border-radius: 10px;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+h2 {
+    margin-bottom: 12px;
+}
+
+p {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 24px;
+}
+
+input {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    background: #0c831f;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #086b19;
+}
+
+a {
+    color: #0c831f;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer {
+    margin-top: 22px;
+    font-size: 14px;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+    <div class="logo">blinkit</div>
+
+    <h2>Welcome Back!</h2>
+    <p>Login to order your daily essentials.</p>
+
+    <form id="loginForm">
+        <input type="email" id="email"
+               placeholder="Email Address" required>
+
+        <input type="password" id="password"
+               placeholder="Password" required>
+               
+               <required>
+
+        <button type="submit">Login</button>
+    </form>
+
+    <p id="message" style="margin-top:15px;"></p>
+
+    <div class="footer">
+        New to Blinkit?
+        <a href="signup.html">Create Account</a>
+    </div>
+
+</div>
+
+<script>
+document.getElementById("loginForm")
+.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    document.getElementById("message").textContent =
+        "Demo login form submitted.";
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blinkit Grocery Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <a href="#" class="logo" onclick="showHome()">blink<span>it</span></a>
+
+    <div class="location">
+        <b>Delivery in 10 minutes</b>
+        <p>Brij Vihar,Muradnagar,Ghaziabad</p>
+    </div>
+
+    <input type="text" id="search"
+        placeholder="Search for groceries..."
+        oninput="searchProducts()">
+
+    <button onclick="showCart()" class="cart-btn">
+        🛒 Cart (<span id="cart-count">0</span>)
+    </button>
+</header>
+
+<nav>
+    <a href="#" onclick="showHome()">Home</a>
+    <a href="#categories" onclick="showHome()">All Categories</a>
+    <a href="#" onclick="showCategory('Fruits')">Fruits</a>
+    <a href="#" onclick="showCategory('Vegetables')">Vegetables</a>
+    <a href="#" onclick="showCategory('Dairy')">Dairy</a>
+    <a href="#" onclick="showCategory('Snacks')">Snacks</a>
+    <a href="#" onclick="showCategory('Drinks')">Drinks</a>
+    <a href="#" onclick="showCategory('Personal Care')">Personal Care</a>
+</nav>
+
+<main id="home-page">
+
+    <section class="banner">
+        <div>
+            <h1>Groceries delivered<br>in minutes!</h1>
+            <p>Fresh products at your doorstep.</p>
+            <button onclick="showHome(); document.getElementById('products').scrollIntoView()">
+                Shop Now
+            </button>
+        </div>
+        <div class="banner-icon">🛍️🥦</div>
+    </section>
+
+    <section id="categories">
+        <h2>Shop by Category</h2>
+
+        <div class="category-list">
+            <button class="category" onclick="showCategory('Fruits')">
+
+                🍎
+            
+                <span>Fruits</span>
+            </button>
+
+            <button class="category" onclick="showCategory('Vegetables')">
+                🥦<span>Vegetables</span>
+            </button>
+
+            <button class="category" onclick="showCategory('Dairy')">
+                🥛<span>Dairy</span>
+            </button>
+
+            <button class="category" onclick="showCategory('Snacks')">
+                🍟<span>Snacks</span>
+            </button>
+
+            <button class="category" onclick="showCategory('Drinks')">
+                🥤<span>Drinks</span>
+            </button>
+
+            <button class="category" onclick="showCategory('Personal Care')">
+                🧴<span>Personal Care</span>
+            </button>
+        </div>
+    </section>
+
+    <section id="products">
+        <h2 id="section-title">Best Deals</h2>
+        <div id="product-list" class="product-list"></div>
+    </section>
+
+</main>
+
+<section id="details-page" class="page" hidden>
+    <button class="back-btn" onclick="showHome()">← Back to shopping</button>
+    <div id="product-details"></div>
+</section>
+
+<section id="cart-page" class="page" hidden>
+    <button class="back-btn" onclick="showHome()">← Continue shopping</button>
+    <h2>My Shopping Cart 🛒</h2>
+    <div id="cart-items"></div>
+    <div id="cart-total"></div>
+</section>
+
+<section id="checkout-page" class="page" hidden>
+    <button class="back-btn" onclick="showCart()">← Back to cart</button>
+    <h2>Checkout</h2>
+    <form id="checkout-form">
+        <label>Your Name</label>
+        <input type="text" required placeholder="Enter your name">
+
+        <label>Delivery Address</label>
+        <textarea required placeholder="Enter your address"></textarea>
+
+        <label>Phone Number</label>
+        <input type="tel" required pattern="[0-9]{10}"
+            placeholder="10-digit mobile number">
+
+        <div id="checkout-total"></div>
+        <button type="submit">Place Demo Order</button>
+    </form>
+    <p id="order-message"></p>
+</section>
+
+<footer>
+    <h2 class="logo">blink<span>it</span></h2>
+    <p>Fresh groceries delivered to your doorstep.</p>
+    <p>About Us | Help & Support | Privacy Policy</p>
+    <p>Student Project | © 2026</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
